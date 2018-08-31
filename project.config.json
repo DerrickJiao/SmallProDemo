@@ -9,8 +9,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "1.7.2",
-	"appid": "touristappid",
-	"projectname": "wsSearchView",
+	"appid": "wx6824704fe1349511",
+	"projectname": "hlw",
 	"condition": {
 		"search": {
 			"current": -1,

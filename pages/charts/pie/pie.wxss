@@ -1,0 +1,4 @@
+/* pages/charts/pie/pie.wxss */
+.ziti{
+  text-align: center;
+}

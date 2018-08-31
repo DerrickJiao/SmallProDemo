@@ -1,6 +1,6 @@
-//index.js
-var WxSearch = require('../../wxSearchView/wxSearchView.js');
 
+var WxSearch = require('../../wxSearchView/wxSearchView.js');
+var util = require('../../utils/utils.js');
 Page({
   data: {},
 
@@ -9,11 +9,16 @@ Page({
     var that = this;
     WxSearch.init(
       that,  // 本页面一个引用
-      ['011', '032', '021', "053"], // 热点搜索推荐，[]表示不使用
-      ['001', '006', '041', '053','011', '032', '021', "053"],// 搜索匹配，[]表示不使用
+      ['001', '002', "003", "004", '005', '006'], // 热点搜索推荐，[]表示不使用
+      ['011', '032', '021', "053"],// 搜索匹配，[]表示不使用
       that.mySearchFunction, // 提供一个搜索回调函数
       that.myGobackFunction //提供一个返回回调函数
     );
+    var time = util.formatTime(new Date());
+    // 再通过setData更改Page()里面的data，动态更新页面的数据
+    this.setData({
+      time: time
+    });
   },
 
   // 转发函数,固定部分
@@ -28,7 +33,19 @@ Page({
     // do your job here
     // 跳转
     wx.redirectTo({
-      url: '../record/record?searchValue='+value
+      url: '../record/record?searchValue=' + value
+    })
+  },
+
+  gotoPage: function (e) {
+    var page = e.currentTarget.dataset.page;
+    wx.navigateTo({
+      url: '../charts/' + page + '/' + page
+    });
+  },
+  wxSearchTab: function () {
+    wx.redirectTo({
+      url: '../search/search'
     })
   },
 
@@ -37,7 +54,7 @@ Page({
     // do your job here
     // 跳转
     wx.redirectTo({
-      url: '../index/index'  
+      url: '../index/index'
     })
   }
 

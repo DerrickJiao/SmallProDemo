@@ -1,0 +1,37 @@
+<view class="weui-search-bar">
+   <view class="weui-search-bar__form">
+    <view class="weui-search-bar__box">
+      <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+      <input type="text" class="weui-search-bar__input" placeholder="请输入查询内容" value="{{wxSearchData.value}}" bindinput="wxSearchInput" bindconfirm="wxSearchConfirm" />
+      <view class="weui-icon-clear" wx:if="{{wxSearchData.value.length > 0}}" bindtap="wxSearchClear">
+        <icon type="clear" size="14"></icon>
+      </view>
+    </view>
+  </view>
+    <view class="weui-search-bar__cancel-btn" bindtap="wxSearchConfirm">
+         <text wx:if="{{wxSearchData.value.length>0}}" data-key='search' bindtap="wxSearchTab">搜索</text>
+         <text wx:else data-key='back'>返回</text>
+     </view>
+</view>
+
+
+<!--<view class="container">
+<view bindtap="gotoPage" data-page="line" class="mt20 list">体温折线</view>
+    <view bindtap="gotoPage" data-page="column" class="list-item">心率</view>
+    <view bindtap="gotoPage" data-page="pie" class="list-item">异常</view>
+</view>-->
+
+ <view class="line one-img">
+        <text class="alone-line-text">体征信息</text>
+        <image class="poster" mode="scaleToFill" src="https://s1.ax1x.com/2018/08/31/PjX8dx.png"></image>
+        <view bindtap="gotoPage" data-page="line" class="mt20 list-item">体温折线</view>
+    </view>
+    <view class="line one-img">
+        <image class="poster" mode="scaleToFill" src="https://s1.ax1x.com/2018/08/31/PjjCtK.png"></image>
+        <view bindtap="gotoPage" data-page="column" class="list-item">心率和血压</view>
+    </view>
+    <view class="line one-img">
+        <image class="poster" mode="scaleToFill" src="https://s1.ax1x.com/2018/08/31/PjjPfO.png"></image>
+         <view bindtap="gotoPage" data-page="pie" class="list-item">异常</view>
+    </view>
+    <view class="time">{{time}}</view>

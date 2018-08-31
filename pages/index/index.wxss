@@ -1,2 +1,43 @@
 @import "../../wxSearchView/wxSearchView.wxss";
 
+/* pages/index/index.wxss */
+page{ width: 100%; height: 100%;}
+scroll-view{ width: 100%; height: 100%;}
+
+.bottom{ display: flex; flex-direction:row; width: 100%; text-align: center; background-color: #01C3CF; position:fixed; left: 0; bottom: 0;}
+.bottom_list{ flex-grow: 1; height: 80rpx; line-height: 80rpx; position: relative;}
+.bottom_list .iconfont{ margin-right: 8rpx;}
+.bottom_list:not(:last-child):after{ content: ""; display: block; width: 4rpx; height: 100%; background-color: #7FE1E7; position: absolute; right: -2rpx; top: 0;}
+.bottom_list:nth-child(1).bed , .bottom_list:nth-child(2).distance , .bottom_list:nth-child(3).rank{ color: #FFFF80;}
+
+.top{ height: 256rpx; padding: 0 70rpx;
+            background-image:-webkit-linear-gradient(0, #00C3CF, #25E6D6);
+            background-image:linear-gradient(0, #00C3CF, #25E6D6);
+}
+
+.top_t{ display: flex; flex-direction: row; justify-content: space-between; height: 120rpx; margin-bottom: 35rpx;}
+.top_t_l{ width: 210rpx; text-align: center; border-bottom-left-radius: 20rpx; border-bottom-right-radius: 20rpx; background-color: rgba(0,0,0,.2);}
+.top_t_l image{ width: 170rpx; margin-top: 39rpx;}
+.top_t_r{ width: 376rpx; padding-top: 42rpx;}
+.top_t_r_1{ color:#01918f;}
+.top_t_r_1 .icon-liuyan{ margin-right: 5px;}
+.top_t_r_1 .iconfont icon-arrowright{ margin-left: -3rpx;}
+.top_t_r_2{ color: #fff; white-space: nowrap; overflow: hidden; position: relative;}
+.top_t_r_2::before{ content: ""; display: block; width: 80rpx; height: 100%; position: absolute; right: 0; top: 0;
+            background-image:-webkit-linear-gradient(90deg, rgba(23,217,212,.1), #17D9D4);
+            background-image:linear-gradient(90deg, rgba(23,217,212,.1), #17D9D4);
+            }
+.top_t_r_2 .iconfont{ margin-right: 8rpx;}
+ 
+.top_b{ height: 66rpx; line-height: 66rpx; text-align: center; border-radius: 33rpx; background-color: #fff;}
+
+.no_data{ text-align: center;}
+.no_data_hide{ display: none;}
+.no_data_img{ padding: 10rpx 20rpx; }
+.no_data_img image{ width: 100%;}
+.no_data_text{ padding: 10rpx 55rpx; line-height: 50rpx;}
+.img{padding: 10rpx 20rpx; }
+.img image{ width: 100%;}
+
+.showLast{ text-align: center;}
+.showLastHide{ display: none;}

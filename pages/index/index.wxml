@@ -1,11 +1,37 @@
 
-<view class="weui-search-bar">
+<!--<view class="weui-search-bar">
   <view class="weui-search-bar__form">
     <view class="weui-search-bar__box">
       <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
       <input type="text" class="weui-search-bar__input"  disabled='true' placeholder="搜索入口" bindtap="wxSearchTab"/>
     </view>
   </view>
-</view>
+</view>-->
 
-<view>{{ searchValue}}</view>
+<scroll-view scroll-y enable-back-to-top bindscrolltolower="loadMoreArr">
+    <view class="top">
+        <view class="top_t">
+            <view class="top_t_l"><image mode="widthFix" src="/image/index_logo.png"></image></view>
+            <view class="top_t_r">
+                <navigator class="top_t_r_1" open-type="navigate" hover-class="navigator-hover"></navigator>
+            </view>
+        </view>
+        
+
+        <view class="top_b" hover-class="navigator-hover" bindtap="wxSearchTab"><input type="text"  disabled='true' placeholder="搜索入口" bindtap="wxSearchTab"/><text class="f_28"></text></view>
+
+    </view>
+    
+    <view class="no_data {{no_data_hide}}">
+        <view class="img"><image mode="widthFix" src="/image/tubiao.png"></image></view>
+        <view class="no_data_img"><image mode="widthFix" src="/image/bg.png"></image></view>
+    </view>
+
+   <view class="bottom">
+        <view class="bottom_list f_28 {{listcur}}" data-type="bed" ><text class="iconfont icon-chuangwei f_36">智能</text></view>
+        <view class="bottom_list f_28 {{listcur}}" data-type="distance" ><text class="iconfont icon-weizhi f_36">输液</text></view>
+        <view class="bottom_list f_28 {{listcur}}" data-type="rank" ><text class="iconfont icon-yiliao f_36">系统</text></view>
+    </view>
+</scroll-view>
+
+
